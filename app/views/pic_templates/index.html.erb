@@ -1,1 +1,17 @@
-<h1>Hi index</h1>
+<h1>All Photos</h1>
+<a href="/photos/new">Add a new photo</a>
+
+<% @pictures.each do |picture| %>
+
+<div class="row">
+ 
+ <div class="col-xs-6">      
+ <img src="<%= picture.source %>"></img>
+      <a class="btn btn-default" href="/photos/<%= picture.id %>" role="button">Show Details</a>
+      <a class="btn btn-default" href="/photos/<%= picture.id %>/edit" role="button">Edit</a>
+      <a class="btn btn-default" href="/photos/delete_photo/<%= picture.id %>" role="button">Delete</a>
+ </div>
+
+</div>
+
+<% end %>
