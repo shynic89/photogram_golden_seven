@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
       @new.save
       @pic = Photo.all
       
-      render("pic_templates/create_row.html.erb")
+      redirect_to("/photos")
   end 
   def index
      @pictures = Photo.all
@@ -35,13 +35,13 @@ class PicturesController < ApplicationController
       p.source =params["source_input"]
       p.caption = params["caption_input"]
       p.save
-     render("pic_templates/update_row.html.erb") 
+     redirect_to("/photos")
   end
   def destroy_row
       @id = params["toast_id"].to_i
       p = Photo.find(@id)
       p.destroy
       @count = Photo.count  
-      render("pic_templates/destroy_row.html.erb")
+      redirect_to("/photos")
   end
 end
