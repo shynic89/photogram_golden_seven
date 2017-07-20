@@ -35,7 +35,7 @@ class PicturesController < ApplicationController
       p.source =params["source_input"]
       p.caption = params["caption_input"]
       p.save
-     redirect_to("/photos")
+     redirect_to("/photos/"+ @id.to_s)
   end
   def destroy_row
       @id = params["toast_id"].to_i
